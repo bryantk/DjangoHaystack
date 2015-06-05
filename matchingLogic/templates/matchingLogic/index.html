@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<form action="/search/" method="get">
+    <label for="first">first name: </label>
+    <input id="first" type="text" name="first" value="{{ first|default:'' }}"><br>
+    <label for="middle">middle name: </label>
+    <input id="middle" type="text" name="middle" value="{{ middle|default:'' }}"><br>
+    <label for="last">first name: </label>
+    <input id="last" type="text" name="last" value="{{ last|default:'' }}"><br>
+    <input type="submit" value="OK">
+</form>
+
+<h1>{{ people|length }} Possibles for '{{ target_name|title|default:'None' }}':</h1>
+{% if people %}
+    <ul>
+    {% for person in people %}
+        <li>{{ person.score }}:  {{ person.name }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+</body>
+</html>
