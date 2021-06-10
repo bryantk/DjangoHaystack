@@ -1,5 +1,5 @@
 certifi==2015.4.28
-Django==1.8.2
+Django==2.2.24
 django-haystack==2.3.1
 elasticsearch==1.5.0
 elasticstack==0.1.1
